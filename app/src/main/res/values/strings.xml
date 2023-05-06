@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">MyPokemonApp</string>
+    <string name="about_button">About Button</string>
 </resources>
