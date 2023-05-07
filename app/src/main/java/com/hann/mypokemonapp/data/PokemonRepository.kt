@@ -3,6 +3,7 @@ package com.hann.mypokemonapp.data
 import com.hann.mypokemonapp.data.source.local.LocalDataSource
 import com.hann.mypokemonapp.data.source.remote.RemoteDataSource
 import com.hann.mypokemonapp.data.source.remote.network.ApiResponse
+import com.hann.mypokemonapp.data.source.remote.response.DetailPokemonResponse
 import com.hann.mypokemonapp.data.source.remote.response.PokemonResponse
 import com.hann.mypokemonapp.domain.model.Pokemon
 import com.hann.mypokemonapp.domain.repository.IPokemonRepository
@@ -35,7 +36,24 @@ class PokemonRepository(
             }
         }.asFlow()
 
+    override fun getDetailPokemon(id: String): Flow<Resource<Pokemon>> =
+        object : NetworkBoundResource<Pokemon, DetailPokemonResponse>() {
+            override fun loadFromDB(): Flow<Pokemon> {
+                return localDataSource.getDetailPokemon(id).map {
+                    Mapper.mapEntityToDomain(it)
+                }
+            }
 
+            override fun shouldFetch(data: Pokemon?) = data?.height == null
+
+            override suspend fun createCall(): Flow<ApiResponse<DetailPokemonResponse>> =
+                remoteDataSource.getPokemonDetail(id)
+
+            override suspend fun saveCallResult(data: DetailPokemonResponse) {
+                localDataSource.updatePokemonDetail(id, data.moves.toString(), data.types.toString(),
+                    data.weight, data.height)
+            }
+        }.asFlow()
 
 
 }

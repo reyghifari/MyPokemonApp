@@ -16,10 +16,10 @@ data class PokemonEntity(
     val name: String,
 
     @ColumnInfo(name = "imageDefault")
-    var image: String?,
+    var image: String,
 
     @ColumnInfo(name = "move")
-    val moves: String?,
+    val move: String?,
 
     @ColumnInfo(name = "types")
     val types: String?,
@@ -34,7 +34,7 @@ data class PokemonEntity(
     val height: Int?,
 
     @ColumnInfo(name = "nickname")
-    var nickname: String?,
+    var nickname: String = "",
 
     @ColumnInfo(name = "isCatch")
     var isCatch: Boolean = false

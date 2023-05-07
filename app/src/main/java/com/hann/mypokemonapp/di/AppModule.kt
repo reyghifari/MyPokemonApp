@@ -10,6 +10,7 @@ import com.hann.mypokemonapp.data.source.remote.network.ApiService
 import com.hann.mypokemonapp.domain.repository.IPokemonRepository
 import com.hann.mypokemonapp.domain.usecase.PokemonInteractor
 import com.hann.mypokemonapp.domain.usecase.PokemonUseCase
+import com.hann.mypokemonapp.presentation.detail.DetailPokemonViewModel
 import com.hann.mypokemonapp.presentation.main.MainViewModel
 import com.hann.mypokemonapp.utils.AppExecutors
 import okhttp3.OkHttpClient
@@ -73,5 +74,8 @@ val useCaseModule = module {
 val viewModelModule = module {
     viewModel {
         MainViewModel(get())
+    }
+    viewModel {
+        DetailPokemonViewModel(get(), get())
     }
 }

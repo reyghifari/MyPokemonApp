@@ -19,6 +19,10 @@ interface PokemonDao {
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun insertPokemon(pokemon: List<PokemonEntity>)
 
+    @Query("UPDATE pokemon SET move = :moves, " + " types = :types, " + " weight = :weight, " + " height = :height WHERE id = :id")
+    suspend fun updateDetailPokemon(id:String, moves: String?,
+                                    types: String?, weight: Int?, height: Int?)
+
     @Update
     fun updateCatchPokemon(pokemon: PokemonEntity)
 

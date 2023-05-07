@@ -18,9 +18,9 @@ object Mapper {
                 name = it.name,
                 height = null,
                 weight = null,
-                nickname = null,
+                nickname = "",
                 url = it.url,
-                moves = null,
+                move = null,
                 types = null,
                 image = pokemonImageUrl,
                 isCatch = false
@@ -39,11 +39,25 @@ object Mapper {
                 weight = it.weight,
                 image = it.image,
                 types = it.types,
-                moves = it.moves,
+                moves = it.move,
                 nickname = it.nickname,
                 height = it.height,
                 isCatch = it.isCatch
             )
         }
+
+    fun mapEntityToDomain(input: PokemonEntity): Pokemon =
+        Pokemon(
+            id = input.id,
+            name = input.name,
+            url = input.url,
+            weight = input.weight,
+            image = input.image,
+            types = input.types,
+            moves = input.move,
+            nickname = input.nickname,
+            height = input.height,
+            isCatch = input.isCatch
+        )
 
 }

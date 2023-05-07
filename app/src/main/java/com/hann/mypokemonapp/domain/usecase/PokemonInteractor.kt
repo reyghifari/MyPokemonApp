@@ -11,4 +11,8 @@ class PokemonInteractor(private val iPokemonRepository: IPokemonRepository) : Po
         return iPokemonRepository.getAllPokemon()
     }
 
+    override fun getDetailPokemon(id: String): Flow<Resource<Pokemon>> {
+        return iPokemonRepository.getDetailPokemon(id)
+    }
+
 }
