@@ -6,5 +6,6 @@ data class DetailPokemonResponse(
     val moves: List<Move>,
     val types: List<Type>,
     val weight: Int,
+    val url: String,
     val height: Int
 )

@@ -1,7 +1,7 @@
 package com.hann.mypokemonapp
 
 import android.app.Application
-import com.hann.mypokemonapp.di.viewModelModule
+import com.hann.mypokemonapp.di.*
 import org.koin.android.ext.koin.androidContext
 import org.koin.android.ext.koin.androidLogger
 import org.koin.core.context.GlobalContext
@@ -15,6 +15,10 @@ class MyApplication : Application() {
             androidContext(this@MyApplication)
             modules(
                 listOf(
+                    databaseModule,
+                    networkModule,
+                    repositoryModule,
+                    useCaseModule,
                     viewModelModule
                 )
             )
