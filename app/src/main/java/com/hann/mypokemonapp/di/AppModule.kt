@@ -72,6 +72,6 @@ val useCaseModule = module {
 
 val viewModelModule = module {
     viewModel {
-        MainViewModel()
+        MainViewModel(get())
     }
 }
