@@ -4,8 +4,8 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.hann.mypokemonapp.data.Resource
-import com.hann.mypokemonapp.domain.usecase.PokemonUseCase
+import com.hann.mypokemonapp.core.data.Resource
+import com.hann.mypokemonapp.core.domain.usecase.PokemonUseCase
 import kotlinx.coroutines.flow.launchIn
 import kotlinx.coroutines.flow.onEach
 

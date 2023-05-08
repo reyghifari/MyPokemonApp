@@ -8,8 +8,8 @@ import androidx.recyclerview.widget.GridLayoutManager
 import com.hann.mypokemonapp.databinding.ActivityMainBinding
 import com.hann.mypokemonapp.presentation.catched.CatchPokemonActivity
 import com.hann.mypokemonapp.presentation.detail.DetailPokemonActivity
-import com.hann.mypokemonapp.ui.adapter.PokemonAdapter
-import com.hann.mypokemonapp.utils.Constants
+import com.hann.mypokemonapp.core.ui.adapter.PokemonAdapter
+import com.hann.mypokemonapp.core.utils.Constants
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class MainActivity : AppCompatActivity() {

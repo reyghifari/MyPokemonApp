@@ -14,10 +14,10 @@ import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.GridLayoutManager
 import com.bumptech.glide.Glide
 import com.hann.mypokemonapp.R
+import com.hann.mypokemonapp.core.domain.model.Pokemon
+import com.hann.mypokemonapp.core.ui.adapter.MoveAdapter
+import com.hann.mypokemonapp.core.ui.adapter.TypeAdapter
 import com.hann.mypokemonapp.databinding.ActivityDetailPokemonBinding
-import com.hann.mypokemonapp.domain.model.Pokemon
-import com.hann.mypokemonapp.ui.adapter.MoveAdapter
-import com.hann.mypokemonapp.ui.adapter.TypeAdapter
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class DetailPokemonActivity : AppCompatActivity() {

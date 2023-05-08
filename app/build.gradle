@@ -22,13 +22,9 @@ android {
     }
 
     buildTypes {
-        debug{
-            buildConfigField "String","BASE_URL","\"https://pokeapi.co/api/v2/\""
-        }
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
-            buildConfigField "String","BASE_URL","\"https://pokeapi.co/api/v2/\""
         }
     }
     compileOptions {
@@ -45,9 +41,6 @@ android {
 }
 
 dependencies {
+    implementation project(":core")
     implementation fileTree(dir: 'libs', include: ['*.jar'])
-    implementation 'androidx.appcompat:appcompat:1.6.1'
-    implementation 'com.google.android.material:material:1.8.0'
-    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
-
 }

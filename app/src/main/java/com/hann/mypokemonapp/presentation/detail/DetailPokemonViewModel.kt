@@ -1,10 +1,10 @@
 package com.hann.mypokemonapp.presentation.detail
 
 import androidx.lifecycle.*
-import com.hann.mypokemonapp.data.Resource
-import com.hann.mypokemonapp.domain.model.Pokemon
-import com.hann.mypokemonapp.domain.usecase.PokemonUseCase
-import com.hann.mypokemonapp.utils.Constants
+import com.hann.mypokemonapp.core.data.Resource
+import com.hann.mypokemonapp.core.domain.model.Pokemon
+import com.hann.mypokemonapp.core.domain.usecase.PokemonUseCase
+import com.hann.mypokemonapp.core.utils.Constants
 import kotlinx.coroutines.flow.launchIn
 import kotlinx.coroutines.flow.onEach
 

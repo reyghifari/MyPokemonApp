@@ -5,10 +5,10 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.hann.mypokemonapp.core.ui.adapter.PokemonAdapter
+import com.hann.mypokemonapp.core.utils.Constants
 import com.hann.mypokemonapp.databinding.ActivityCatchPokemonBinding
 import com.hann.mypokemonapp.presentation.detail.DetailPokemonActivity
-import com.hann.mypokemonapp.ui.adapter.PokemonAdapter
-import com.hann.mypokemonapp.utils.Constants
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class CatchPokemonActivity : AppCompatActivity() {
