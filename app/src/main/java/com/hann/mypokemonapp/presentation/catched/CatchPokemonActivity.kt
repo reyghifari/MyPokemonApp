@@ -22,6 +22,8 @@ class CatchPokemonActivity : AppCompatActivity() {
         binding = ActivityCatchPokemonBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        supportActionBar?.title = "My Pokemon List"
+
         initRecyclerView()
 
         catchPokemonViewModel.catchPokemon.observe(this){ pokemon ->

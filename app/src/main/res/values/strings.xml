@@ -5,4 +5,8 @@
     <string name="pokemon">Pokemon</string>
     <string name="something_wrong">Somethin wrong</string>
     <string name="empty_view">No pokemon caught</string>
+    <string name="waiting_to_catch_pokemon">waiting to catch pokemon...</string>
+    <string name="confirm">Confirm</string>
+    <string name="enter_your_pokemon_nickname">Enter your Pokemon nickname</string>
+    <string name="are_you_sure_you_want_to_remove_pokemon">Are you sure you want to remove Pokemon?</string>
 </resources>
