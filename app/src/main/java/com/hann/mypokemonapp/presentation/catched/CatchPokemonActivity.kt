@@ -8,6 +8,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.hann.mypokemonapp.core.ui.adapter.PokemonAdapter
 import com.hann.mypokemonapp.core.utils.Constants
 import com.hann.mypokemonapp.databinding.ActivityCatchPokemonBinding
+import com.hann.mypokemonapp.presentation.about.AboutActivity
 import com.hann.mypokemonapp.presentation.detail.DetailPokemonActivity
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
@@ -39,6 +40,10 @@ class CatchPokemonActivity : AppCompatActivity() {
 
         binding.lvMainCatch.setOnClickListener {
             finish()
+        }
+        binding.floatCatch.setOnClickListener {
+            val intent = Intent(this, AboutActivity::class.java)
+            startActivity(intent)
         }
     }
 

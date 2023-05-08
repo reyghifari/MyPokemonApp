@@ -20,4 +20,10 @@
     <string name="types">Types</string>
     <string name="moves">Moves</string>
     <string name="failed_catch">Failed to catch the Pokemon!</string>
+    <string name="about_image">About Image</string>
+    <string name="about_app">This application has three pages, namely the Pokemon list page, the Pokemon details page, and the user\'s Pokemon list page. This application uses the API from pokeapi.co as its data source.</string>
+    <string name="follow_my_github">Follow my github:</string>
+    <string name="reyghifari">reyghifari</string>
+    <string name="name">Name:</string>
+    <string name="raihan">Kgs Muhammad Raihan Ghifari</string>
 </resources>

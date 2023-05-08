@@ -10,6 +10,7 @@ import com.hann.mypokemonapp.presentation.catched.CatchPokemonActivity
 import com.hann.mypokemonapp.presentation.detail.DetailPokemonActivity
 import com.hann.mypokemonapp.core.ui.adapter.PokemonAdapter
 import com.hann.mypokemonapp.core.utils.Constants
+import com.hann.mypokemonapp.presentation.about.AboutActivity
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class MainActivity : AppCompatActivity() {
@@ -47,6 +48,11 @@ class MainActivity : AppCompatActivity() {
 
         binding.lvCatch.setOnClickListener {
             val intent = Intent(this, CatchPokemonActivity::class.java)
+            startActivity(intent)
+        }
+
+        binding.floatMain.setOnClickListener {
+            val intent = Intent(this, AboutActivity::class.java)
             startActivity(intent)
         }
     }

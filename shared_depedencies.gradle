@@ -1,6 +1,6 @@
 dependencies {
     // Core
-    implementation 'androidx.core:core-ktx:1.9.0'
+    implementation 'androidx.core:core-ktx:1.10.0'
     implementation 'androidx.appcompat:appcompat:1.6.1'
     implementation 'com.google.android.material:material:1.8.0'
     implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
@@ -11,7 +11,7 @@ dependencies {
 
     // Glide
     implementation 'de.hdodenhof:circleimageview:3.1.0'
-    implementation 'com.github.bumptech.glide:glide:4.14.1'
+    implementation 'com.github.bumptech.glide:glide:4.15.0'
     kapt 'com.github.bumptech.glide:compiler:4.14.1'
 
     // Testing
@@ -25,8 +25,8 @@ dependencies {
     implementation "com.squareup.okhttp3:logging-interceptor:5.0.0-alpha.6"
 
     // Android KTX
-    implementation "androidx.activity:activity-ktx:1.6.1"
-    implementation "androidx.fragment:fragment-ktx:1.5.5"
+    implementation "androidx.activity:activity-ktx:1.7.1"
+    implementation "androidx.fragment:fragment-ktx:1.5.7"
     implementation "com.github.kirich1409:viewbindingpropertydelegate:1.5.3"
 
     // Data Store

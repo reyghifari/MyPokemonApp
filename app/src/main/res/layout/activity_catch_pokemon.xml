@@ -90,6 +90,7 @@
         </com.google.android.material.bottomappbar.BottomAppBar>
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/float_catch"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             app:layout_anchor="@id/app_bar"
