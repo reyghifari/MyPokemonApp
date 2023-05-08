@@ -37,7 +37,7 @@ class CatchPokemonActivity : AppCompatActivity() {
             }
         }
 
-        binding.lvMain.setOnClickListener {
+        binding.lvMainCatch.setOnClickListener {
             finish()
         }
     }

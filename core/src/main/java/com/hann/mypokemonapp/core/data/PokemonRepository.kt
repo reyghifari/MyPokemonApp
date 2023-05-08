@@ -13,12 +13,12 @@ import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.map
 
 class PokemonRepository(
-    private val localDataSource: com.hann.mypokemonapp.core.data.source.local.LocalDataSource,
+    private val localDataSource: LocalDataSource,
     private val appExecutors: AppExecutors,
     private val remoteDataSource: RemoteDataSource
 ) : IPokemonRepository{
-    override fun getAllPokemon(): Flow<com.hann.mypokemonapp.core.data.Resource<List<Pokemon>>> =
-        object : com.hann.mypokemonapp.core.data.NetworkBoundResource<List<Pokemon>, List<PokemonResponse>>() {
+    override fun getAllPokemon(): Flow<Resource<List<Pokemon>>> =
+        object : NetworkBoundResource<List<Pokemon>, List<PokemonResponse>>() {
             override fun loadFromDB(): Flow<List<Pokemon>> {
                 return localDataSource.getAllPokemon().map {
                     Mapper.dataEntitiesToDomain(it)
@@ -36,8 +36,8 @@ class PokemonRepository(
             }
         }.asFlow()
 
-    override fun getDetailPokemon(id: String): Flow<com.hann.mypokemonapp.core.data.Resource<Pokemon>> =
-        object : com.hann.mypokemonapp.core.data.NetworkBoundResource<Pokemon, DetailPokemonResponse>() {
+    override fun getDetailPokemon(id: String): Flow<Resource<Pokemon>> =
+        object : NetworkBoundResource<Pokemon, DetailPokemonResponse>() {
             override fun loadFromDB(): Flow<Pokemon> {
                 return localDataSource.getDetailPokemon(id).map {
                     Mapper.dataEntityToDomain(it)

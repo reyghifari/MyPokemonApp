@@ -92,10 +92,9 @@
                     <ImageView
                         android:id="@+id/imageView16"
                         android:layout_width="20dp"
-                        android:layout_height="0dp"
+                        android:layout_height="match_parent"
                         android:layout_gravity="center"
                         android:contentDescription="@string/main_button"
-                        android:layout_weight="1"
                         app:srcCompat="@drawable/pikachu" />
                 </LinearLayout>
 
@@ -109,9 +108,8 @@
                     <ImageView
                         android:id="@+id/imageView5"
                         android:layout_width="20dp"
-                        android:layout_height="0dp"
+                        android:layout_height="match_parent"
                         android:layout_gravity="center"
-                        android:layout_weight="1"
                         android:contentDescription="@string/catch_button"
                         android:visibility="invisible"
                         app:srcCompat="@drawable/pokeball" />
@@ -127,10 +125,9 @@
                     <ImageView
                         android:id="@+id/imageView18"
                         android:layout_width="20dp"
-                        android:layout_height="0dp"
+                        android:layout_height="match_parent"
                         android:layout_gravity="center"
                         android:contentDescription="@string/catch_button"
-                        android:layout_weight="1"
                         app:srcCompat="@drawable/pokeball" />
                 </LinearLayout>
 

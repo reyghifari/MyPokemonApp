@@ -23,7 +23,7 @@
             android:textSize="14sp"
             android:textAlignment="center"
             android:text="@string/pokemon"
-            android:textColor="@color/purple_700"
+            android:textColor="#A48A0C"
             />
 
     </LinearLayout>
