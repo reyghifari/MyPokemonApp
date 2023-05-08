@@ -46,7 +46,7 @@ object Mapper {
             )
         }
 
-    fun mapEntityToDomain(input: PokemonEntity): Pokemon =
+    fun dataEntityToDomain(input: PokemonEntity): Pokemon =
         Pokemon(
             id = input.id,
             name = input.name,
@@ -59,5 +59,18 @@ object Mapper {
             height = input.height,
             isCatch = input.isCatch
         )
+
+    fun dataDomainToEntity(input: Pokemon) = PokemonEntity(
+        id = input.id,
+        name = input.name,
+        url = input.url,
+        height = input.height,
+        weight = input.weight,
+        isCatch = input.isCatch,
+        nickname = input.nickname ?: "",
+        types = input.types,
+        image = input.image ?: "",
+        move = input.moves
+    )
 
 }

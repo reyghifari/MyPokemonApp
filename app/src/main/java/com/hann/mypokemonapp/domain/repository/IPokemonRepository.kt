@@ -9,4 +9,5 @@ interface IPokemonRepository {
     fun getAllPokemon(): Flow<Resource<List<Pokemon>>>
     fun getDetailPokemon(id: String) : Flow<Resource<Pokemon>>
     fun getCatchPokemon(): Flow<List<Pokemon>>
+    fun setCatchPokemon(pokemon: Pokemon, state: Boolean, nick: String)
 }

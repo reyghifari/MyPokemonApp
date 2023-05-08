@@ -40,7 +40,7 @@ class PokemonRepository(
         object : NetworkBoundResource<Pokemon, DetailPokemonResponse>() {
             override fun loadFromDB(): Flow<Pokemon> {
                 return localDataSource.getDetailPokemon(id).map {
-                    Mapper.mapEntityToDomain(it)
+                    Mapper.dataEntityToDomain(it)
                 }
             }
 
@@ -58,6 +58,13 @@ class PokemonRepository(
     override fun getCatchPokemon(): Flow<List<Pokemon>> {
         return localDataSource.getCatchPokemon().map {
             Mapper.dataEntitiesToDomain(it)
+        }
+    }
+
+    override fun setCatchPokemon(pokemon: Pokemon, state: Boolean, nick: String) {
+        val entity = Mapper.dataDomainToEntity(pokemon)
+        appExecutors.diskIO().execute {
+            localDataSource.setCatchPokemon(entity, state, nick)
         }
     }
 

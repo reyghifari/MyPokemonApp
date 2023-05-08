@@ -22,7 +22,6 @@ class CatchPokemonActivity : AppCompatActivity() {
         binding = ActivityCatchPokemonBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-
         initRecyclerView()
 
         catchPokemonViewModel.catchPokemon.observe(this){ pokemon ->

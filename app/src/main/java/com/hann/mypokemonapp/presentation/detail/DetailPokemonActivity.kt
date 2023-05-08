@@ -15,6 +15,8 @@ class DetailPokemonActivity : AppCompatActivity() {
 
     private lateinit var binding : ActivityDetailPokemonBinding
     private val detailPokemonViewModel : DetailPokemonViewModel by viewModel()
+    private var statusCatch: Boolean = false
+    private lateinit var pokemonData: Pokemon
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -40,9 +42,16 @@ class DetailPokemonActivity : AppCompatActivity() {
                 setData(it.pokemon)
             }
         }
+
+        binding.ivPokeballCatch.setOnClickListener {
+            statusCatch = !statusCatch
+            setStatusCatch(statusCatch)
+            detailPokemonViewModel.setCatchPokemon(pokemonData, statusCatch, "Nick Test")
+        }
     }
 
     private fun setData(pokemon: Pokemon) {
+        pokemonData = pokemon
         binding.tvNamePokemon.text = pokemon.name
         binding.tvNicknamePokemon.text = pokemon.nickname ?: ""
         binding.tvHeightPokemon.text = pokemon.height.toString()
@@ -51,7 +60,7 @@ class DetailPokemonActivity : AppCompatActivity() {
             .load(pokemon.image)
             .into(binding.ivImagePokemon)
 
-        val statusCatch = pokemon.isCatch
+        statusCatch = pokemon.isCatch
         setStatusCatch(statusCatch)
     }
 

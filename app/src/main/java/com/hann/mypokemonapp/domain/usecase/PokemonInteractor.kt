@@ -18,5 +18,8 @@ class PokemonInteractor(private val iPokemonRepository: IPokemonRepository) : Po
     override fun getCatchPokemon(): Flow<List<Pokemon>> {
         return iPokemonRepository.getCatchPokemon()
     }
+    override fun setCatchPokemon(pokemon: Pokemon, state: Boolean, nick: String) {
+        return iPokemonRepository.setCatchPokemon(pokemon, state, nick)
+    }
 
 }

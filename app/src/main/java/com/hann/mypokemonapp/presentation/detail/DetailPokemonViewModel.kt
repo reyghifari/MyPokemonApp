@@ -2,6 +2,7 @@ package com.hann.mypokemonapp.presentation.detail
 
 import androidx.lifecycle.*
 import com.hann.mypokemonapp.data.Resource
+import com.hann.mypokemonapp.domain.model.Pokemon
 import com.hann.mypokemonapp.domain.usecase.PokemonUseCase
 import com.hann.mypokemonapp.utils.Constants
 import kotlinx.coroutines.flow.launchIn
@@ -21,6 +22,10 @@ class DetailPokemonViewModel(
             getDetailPokemon(it)
         }
     }
+
+    fun setCatchPokemon(pokemon: Pokemon, state: Boolean, nick:String) =
+         useCase.setCatchPokemon(pokemon, state, nick)
+
 
     private fun getDetailPokemon(id: String) {
         useCase.getDetailPokemon(id).onEach {
