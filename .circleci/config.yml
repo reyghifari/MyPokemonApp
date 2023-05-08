@@ -34,4 +34,8 @@ jobs:
           path: app/build/test-results
       - store_artifacts:  
           path: app/build/outputs/apk/debug/
+<<<<<<< HEAD
           destination: artifact-file
+=======
+          destination: artifact-file
+>>>>>>> 3e4581fe4c0a2ca33c0f05e21e261620f1368020
