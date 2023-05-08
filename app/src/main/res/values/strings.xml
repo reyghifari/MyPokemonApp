@@ -9,4 +9,14 @@
     <string name="confirm">Confirm</string>
     <string name="enter_your_pokemon_nickname">Enter your Pokemon nickname</string>
     <string name="are_you_sure_you_want_to_remove_pokemon">Are you sure you want to remove Pokemon?</string>
+    <string name="main_button">Main Button</string>
+    <string name="catch_button">Catch Button</string>
+    <string name="back_button">Back Button</string>
+    <string name="nickname">Nickname</string>
+    <string name="pokemon_height_image">Pokemon Height Image</string>
+    <string name="pokemon_weight_image">Pokemon weight Image</string>
+    <string name="kg">48 Kg</string>
+    <string name="cm">12 cm</string>
+    <string name="types">Types</string>
+    <string name="moves">Moves</string>
 </resources>
