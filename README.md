@@ -18,12 +18,12 @@ PokeAPI provides a RESTful API interface to highly detailed objects built from t
 ## Architecture
 **MyPokemonApp** is based on the MVVM architecture and the Repository pattern, which follows the [Google's official architecture guidance](https://developer.android.com/topic/architecture).
 
-![architecture](figure/figure0.png)
+![architecture](readphoto/figure0.png)
 
 ### UI Layer
 
-![architecture](figure/figure2.png)
+![architecture](readphoto/figure2.png)
 
 ### Data Layer
 
-![architecture](figure/figure3.png)
+![architecture](readphoto/figure3.png)
