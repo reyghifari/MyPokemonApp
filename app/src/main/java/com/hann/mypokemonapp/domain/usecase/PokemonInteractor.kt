@@ -15,4 +15,8 @@ class PokemonInteractor(private val iPokemonRepository: IPokemonRepository) : Po
         return iPokemonRepository.getDetailPokemon(id)
     }
 
+    override fun getCatchPokemon(): Flow<List<Pokemon>> {
+        return iPokemonRepository.getCatchPokemon()
+    }
+
 }

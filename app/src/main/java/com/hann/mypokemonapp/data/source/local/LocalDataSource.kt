@@ -10,6 +10,8 @@ class LocalDataSource(private val pokemonDao: PokemonDao) {
 
     fun getDetailPokemon(id: String): Flow<PokemonEntity> = pokemonDao.getDetailPokemon(id)
 
+    fun getCatchPokemon() : Flow<List<PokemonEntity>> = pokemonDao.getCatchPokemon()
+
     suspend fun updatePokemonDetail(id:String, moves: String?, types: String?, weight: Int?, height: Int?)
             = pokemonDao.updateDetailPokemon(id, moves, types, weight, height)
 

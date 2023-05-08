@@ -55,5 +55,11 @@ class PokemonRepository(
             }
         }.asFlow()
 
+    override fun getCatchPokemon(): Flow<List<Pokemon>> {
+        return localDataSource.getCatchPokemon().map {
+            Mapper.dataEntitiesToDomain(it)
+        }
+    }
+
 
 }

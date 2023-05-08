@@ -7,6 +7,7 @@ import android.view.View
 import android.widget.Toast
 import androidx.recyclerview.widget.GridLayoutManager
 import com.hann.mypokemonapp.databinding.ActivityMainBinding
+import com.hann.mypokemonapp.presentation.catched.CatchPokemonActivity
 import com.hann.mypokemonapp.presentation.detail.DetailPokemonActivity
 import com.hann.mypokemonapp.ui.adapter.PokemonAdapter
 import com.hann.mypokemonapp.utils.Constants
@@ -43,6 +44,11 @@ class MainActivity : AppCompatActivity() {
                 binding.rvPokemon.visibility = View.VISIBLE
                 pokemonAdapter.setData(it.pokemon)
             }
+        }
+
+        binding.lvCatch.setOnClickListener {
+            val intent = Intent(this, CatchPokemonActivity::class.java)
+            startActivity(intent)
         }
     }
 

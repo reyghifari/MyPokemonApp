@@ -8,4 +8,6 @@ interface PokemonUseCase {
     fun getAllPokemon(): Flow<Resource<List<Pokemon>>>
 
     fun getDetailPokemon(id: String) : Flow<Resource<Pokemon>>
+
+    fun getCatchPokemon(): Flow<List<Pokemon>>
 }

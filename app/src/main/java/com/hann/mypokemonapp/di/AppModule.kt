@@ -10,6 +10,7 @@ import com.hann.mypokemonapp.data.source.remote.network.ApiService
 import com.hann.mypokemonapp.domain.repository.IPokemonRepository
 import com.hann.mypokemonapp.domain.usecase.PokemonInteractor
 import com.hann.mypokemonapp.domain.usecase.PokemonUseCase
+import com.hann.mypokemonapp.presentation.catched.CatchPokemonViewModel
 import com.hann.mypokemonapp.presentation.detail.DetailPokemonViewModel
 import com.hann.mypokemonapp.presentation.main.MainViewModel
 import com.hann.mypokemonapp.utils.AppExecutors
@@ -77,5 +78,8 @@ val viewModelModule = module {
     }
     viewModel {
         DetailPokemonViewModel(get(), get())
+    }
+    viewModel {
+        CatchPokemonViewModel(get())
     }
 }
