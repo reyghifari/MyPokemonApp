@@ -66,7 +66,7 @@ class DetailPokemonActivity : AppCompatActivity() {
                 showDialogLoadingCatch()
                 val successProbability = 0.5
                 val randomNumber = Math.random()
-                if (randomNumber < successProbability){  //Sukses
+                if (randomNumber < successProbability){  //Success
                     Handler().postDelayed({
                         hideDialogLoading()
                         showDialogNickname()
@@ -74,7 +74,7 @@ class DetailPokemonActivity : AppCompatActivity() {
                 }else{    //failed
                     Handler().postDelayed({
                         hideDialogLoading()
-                        Toast.makeText(this, "Failed to catch the Pokemon!", Toast.LENGTH_SHORT).show()
+                        Toast.makeText(this, getString(R.string.failed_catch), Toast.LENGTH_SHORT).show()
                     }, 3000)
                 }
             }

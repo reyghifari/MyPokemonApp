@@ -5,7 +5,7 @@ import androidx.lifecycle.asLiveData
 import com.hann.mypokemonapp.domain.usecase.PokemonUseCase
 
 class CatchPokemonViewModel(
-    private val useCase: PokemonUseCase
+    useCase: PokemonUseCase
 ) : ViewModel() {
 
     val catchPokemon = useCase.getCatchPokemon().asLiveData()

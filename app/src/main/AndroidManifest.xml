@@ -15,6 +15,9 @@
         android:theme="@style/Theme.MyPokemonApp"
         tools:targetApi="31">
         <activity
+            android:name=".presentation.about.AboutActivity"
+            android:exported="false" />
+        <activity
             android:name=".presentation.catched.CatchPokemonActivity"
             android:exported="false" />
         <activity

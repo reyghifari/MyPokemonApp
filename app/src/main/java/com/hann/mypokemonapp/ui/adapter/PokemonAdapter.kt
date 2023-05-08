@@ -44,8 +44,8 @@ class PokemonAdapter : RecyclerView.Adapter<PokemonAdapter.ViewHolder>() {
             with(binding){
                 Glide.with(itemView.context)
                     .load(data.image)
-                    .into(imagePokemon)
-                titlePokemon.text = data.name
+                    .into(imagePokemonAdapter)
+                titlePokemonAdapter.text = data.name
             }
         }
 
