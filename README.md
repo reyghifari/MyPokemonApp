@@ -12,7 +12,7 @@ MyPokemonApp demonstrates modern Android development with Koin, Coroutines, Flow
 
 ## Open API
 
-Pokedex using the [PokeAPI](https://pokeapi.co/) for constructing RESTful API.<br>
+MyPokemonApp using the [PokeAPI](https://pokeapi.co/) for constructing RESTful API.<br>
 PokeAPI provides a RESTful API interface to highly detailed objects built from thousands of lines of data related to Pokémon.
 
 ## Architecture
