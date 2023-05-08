@@ -15,6 +15,13 @@ MyPokemonApp demonstrates modern Android development with Koin, Coroutines, Flow
 MyPokemonApp using the [PokeAPI](https://pokeapi.co/) for constructing RESTful API.<br>
 PokeAPI provides a RESTful API interface to highly detailed objects built from thousands of lines of data related to Pokémon.
 
+### Continuous Integration
+
+MyPokemonApp using Circle ci, Is a service to create continuous integration. Interestingly, apart from using your own server, you can also use the hosting that has been provided. For configuration you can also use YAML. In addition, there is also a ready-to-use docker image. This service can also be directly integrated with Github and Bitbucket quickly
+
+![architecture](readphoto/circleci.png)
+
+
 ## Architecture
 **MyPokemonApp** is based on the MVVM architecture and the Repository pattern, which follows the [Google's official architecture guidance](https://developer.android.com/topic/architecture).
 
@@ -27,3 +34,5 @@ PokeAPI provides a RESTful API interface to highly detailed objects built from t
 ### Data Layer
 
 ![architecture](readphoto/figure3.png)
+
+
