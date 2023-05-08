@@ -3,6 +3,7 @@ plugins {
     id 'org.jetbrains.kotlin.android'
     id 'kotlin-parcelize'
     id 'kotlin-kapt'
+    id "androidx.navigation.safeargs"
 }
 
 apply from: '../shared_depedencies.gradle'
@@ -13,7 +14,7 @@ android {
 
     defaultConfig {
         applicationId "com.hann.mypokemonapp"
-        minSdk 24
+        minSdk 21
         targetSdk 33
         versionCode 1
         versionName "1.0"

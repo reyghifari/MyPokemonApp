@@ -9,6 +9,8 @@ import com.hann.mypokemonapp.core.data.source.remote.RemoteDataSource
 import com.hann.mypokemonapp.core.data.source.remote.network.ApiService
 import com.hann.mypokemonapp.core.domain.repository.IPokemonRepository
 import com.hann.mypokemonapp.core.utils.AppExecutors
+import net.sqlcipher.database.SQLiteDatabase
+import net.sqlcipher.database.SupportFactory
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import org.koin.android.ext.koin.androidContext
@@ -23,10 +25,13 @@ val databaseModule = module {
         get<PokemonDatabase>().pokemonDao()
     }
     single {
+        val passphrase: ByteArray = SQLiteDatabase.getBytes("mypokemonapp".toCharArray())
+        val factory = SupportFactory(passphrase)
         Room.databaseBuilder(
             androidContext(),
             PokemonDatabase::class.java, "pokemon.db"
         ).fallbackToDestructiveMigration()
+            .openHelperFactory(factory)
             .build()
     }
 }
