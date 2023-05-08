@@ -36,6 +36,10 @@ class CatchPokemonActivity : AppCompatActivity() {
                 binding.rvCatch.visibility = View.GONE
             }
         }
+
+        binding.lvMain.setOnClickListener {
+            finish()
+        }
     }
 
     private fun initRecyclerView() {

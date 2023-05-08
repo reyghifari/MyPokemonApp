@@ -2,6 +2,8 @@ package com.hann.mypokemonapp.data.source.local
 
 import com.hann.mypokemonapp.data.source.local.dao.PokemonDao
 import com.hann.mypokemonapp.data.source.local.entity.PokemonEntity
+import com.hann.mypokemonapp.data.source.remote.response.Move
+import com.hann.mypokemonapp.data.source.remote.response.Type
 import kotlinx.coroutines.flow.Flow
 
 class LocalDataSource(private val pokemonDao: PokemonDao) {
@@ -12,8 +14,8 @@ class LocalDataSource(private val pokemonDao: PokemonDao) {
 
     fun getCatchPokemon() : Flow<List<PokemonEntity>> = pokemonDao.getCatchPokemon()
 
-    suspend fun updatePokemonDetail(id:String, moves: String?, types: String?, weight: Int?, height: Int?)
-            = pokemonDao.updateDetailPokemon(id, moves, types, weight, height)
+    suspend fun updatePokemonDetail(id: String, moves: List<Move>?, types: List<Type>?, weight: Int?, height: Int?) =
+        pokemonDao.updateDetailPokemon(id, moves, types, weight, height)
 
     suspend fun insertPokemon(pokemonList: List<PokemonEntity>) = pokemonDao.insertPokemon(pokemonList)
 

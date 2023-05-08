@@ -1,5 +1,7 @@
 package com.hann.mypokemonapp.utils
 
+import com.google.gson.Gson
+import com.google.gson.reflect.TypeToken
 import com.hann.mypokemonapp.data.source.local.entity.PokemonEntity
 import com.hann.mypokemonapp.data.source.remote.response.PokemonResponse
 import com.hann.mypokemonapp.domain.model.Pokemon
@@ -20,8 +22,8 @@ object Mapper {
                 weight = null,
                 nickname = "",
                 url = it.url,
-                move = null,
-                types = null,
+                moves = emptyList(),
+                types =  emptyList(),
                 image = pokemonImageUrl,
                 isCatch = false
             )
@@ -39,7 +41,7 @@ object Mapper {
                 weight = it.weight,
                 image = it.image,
                 types = it.types,
-                moves = it.move,
+                moves = it.moves,
                 nickname = it.nickname,
                 height = it.height,
                 isCatch = it.isCatch
@@ -54,7 +56,7 @@ object Mapper {
             weight = input.weight,
             image = input.image,
             types = input.types,
-            moves = input.move,
+            moves = input.moves,
             nickname = input.nickname,
             height = input.height,
             isCatch = input.isCatch
@@ -68,9 +70,12 @@ object Mapper {
         weight = input.weight,
         isCatch = input.isCatch,
         nickname = input.nickname ?: "",
-        types = input.types,
+        types = input.types ?: emptyList(),
         image = input.image ?: "",
-        move = input.moves
+        moves = input.moves ?: emptyList()
     )
+
+    inline fun <reified T> Gson.fromJson(json: String) =
+        fromJson<T>(json, object : TypeToken<T>() {}.type)
 
 }

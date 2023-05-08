@@ -11,10 +11,13 @@ import android.widget.Button
 import android.widget.TextView
 import android.widget.Toast
 import androidx.core.content.ContextCompat
+import androidx.recyclerview.widget.GridLayoutManager
 import com.bumptech.glide.Glide
 import com.hann.mypokemonapp.R
 import com.hann.mypokemonapp.databinding.ActivityDetailPokemonBinding
 import com.hann.mypokemonapp.domain.model.Pokemon
+import com.hann.mypokemonapp.ui.adapter.MoveAdapter
+import com.hann.mypokemonapp.ui.adapter.TypeAdapter
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class DetailPokemonActivity : AppCompatActivity() {
@@ -24,6 +27,8 @@ class DetailPokemonActivity : AppCompatActivity() {
     private var statusCatch: Boolean = false
     private lateinit var pokemonData: Pokemon
     private lateinit var dialog: Dialog
+    private lateinit var moveAdapter: MoveAdapter
+    private lateinit var typeAdapter: TypeAdapter
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -32,6 +37,9 @@ class DetailPokemonActivity : AppCompatActivity() {
         supportActionBar?.hide()
 
         dialog = Dialog(this)
+
+        initRecyclerView()
+
         detailPokemonViewModel.state.observe(this){
             if (it.isLoading){
                 binding.shimmerLayoutDetail.visibility = View.VISIBLE
@@ -71,6 +79,10 @@ class DetailPokemonActivity : AppCompatActivity() {
                 }
             }
         }
+
+        binding.ivBackDetail.setOnClickListener{
+            finish()
+        }
     }
 
     private fun setData(pokemon: Pokemon) {
@@ -79,6 +91,9 @@ class DetailPokemonActivity : AppCompatActivity() {
         binding.tvNicknamePokemon.text = pokemon.nickname ?: ""
         binding.tvHeightPokemon.text = pokemon.height.toString()
         binding.tvWeightPokemon.text = pokemon.weight.toString()
+        moveAdapter.setData(pokemon.moves)
+        typeAdapter.setData(pokemon.types)
+
         Glide.with(this)
             .load(pokemon.image)
             .into(binding.ivImagePokemon)
@@ -92,6 +107,24 @@ class DetailPokemonActivity : AppCompatActivity() {
             binding.ivPokeballCatch.setImageDrawable(ContextCompat.getDrawable(this, R.drawable.pokeball))
         } else {
             binding.ivPokeballCatch.setImageDrawable(ContextCompat.getDrawable(this, R.drawable.pokecatch))
+        }
+    }
+
+    private fun initRecyclerView() {
+        moveAdapter = MoveAdapter()
+        binding.rvMovesPokemon.layoutManager = GridLayoutManager(this, 3)
+        binding.rvMovesPokemon.adapter = moveAdapter
+        binding.rvMovesPokemon.setHasFixedSize(false)
+        moveAdapter.onItemClick = {
+            Toast.makeText(this,  "Move "+ it.move.name, Toast.LENGTH_SHORT).show()
+        }
+
+        typeAdapter = TypeAdapter()
+        binding.rvTypesPokemon.layoutManager = GridLayoutManager(this, 3)
+        binding.rvTypesPokemon.adapter = typeAdapter
+        binding.rvTypesPokemon.setHasFixedSize(false)
+        typeAdapter.onItemClick = {
+            Toast.makeText(this,  "Type "+ it.type.name, Toast.LENGTH_SHORT).show()
         }
     }
 

@@ -50,7 +50,7 @@ class PokemonRepository(
                 remoteDataSource.getPokemonDetail(id)
 
             override suspend fun saveCallResult(data: DetailPokemonResponse) {
-                localDataSource.updatePokemonDetail(id, data.moves.toString(), data.types.toString(),
+                localDataSource.updatePokemonDetail(id, data.moves, data.types,
                     data.weight, data.height)
             }
         }.asFlow()
