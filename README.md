@@ -21,7 +21,6 @@ MyPokemonApp using Circle ci, Is a service to create continuous integration. Int
 
 ![architecture](readphoto/circleci.png)
 
-
 ## Architecture
 **MyPokemonApp** is based on the MVVM architecture and the Repository pattern, which follows the [Google's official architecture guidance](https://developer.android.com/topic/architecture).
 
@@ -34,5 +33,11 @@ MyPokemonApp using Circle ci, Is a service to create continuous integration. Int
 ### Data Layer
 
 ![architecture](readphoto/figure3.png)
+
+### Encryption
+
+Implement encryption on Room Database with SQLCipher on MyPokemonApp.
+
+![architecture](readphoto/encription.png)
 
 
