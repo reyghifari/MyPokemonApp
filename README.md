@@ -6,7 +6,7 @@
 </p>
 
 <p align="center">  
-MyPokemonApp demonstrates modern Android development with Koin, Coroutines, Flow, Jetpack (Room, ViewModel), and Material Design based on MVVM architecture.
+MyPokemonApp demonstrates modern Android development with Koin, Coroutines, Flow, Jetpack (Room, ViewModel), and Material Design 3 based on MVVM architecture.
 </p>
 </br>
 
